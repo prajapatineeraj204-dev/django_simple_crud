@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>form</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+</head>
+<body>
+		<h1>Welcome to crud django</h1>
+		<h3>Edit student</h3>
+	<form action="/update/{{d.id}}" method="POST">
+		{% csrf_token %}
+		name:<input type="text" value="{{d.name}}"  name="name"><br><br>
+		email:<input type="email" value="{{d.email}}" name="email"><br><br>
+		city:<input type="text" value="{{d.city}}" name="city"><br><br>
+		<input type="submit" name="" value="Submit">
+	</form>
+	<br><br>
+	<a href="/">Back</a>
+</body>
+</html>

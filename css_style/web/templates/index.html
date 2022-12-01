@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>css static link</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+	<h1>Welcome to crud django</h1>
+	<!-- {% if m %}
+	<p>{{m}}</p>
+	{% endif %} -->
+	<table class="table" border="2">
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>City</th>
+			<th>Action</th>
+		</tr>
+		{% for d in data%}
+		<tr>
+			<td>{{forloop.counter}}</td>
+			<td>{{d.name}}</td>
+			<td>{{d.email}}</td>
+			<td>{{d.city}}</td>
+			<td><a href="delete/{{d.id}}">Delete</a></td>
+			<td><a href="edit/{{d.id}}">Edit</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+	<hr>
+	<a href="/add">Add member</a>
+</body>
+</html>
